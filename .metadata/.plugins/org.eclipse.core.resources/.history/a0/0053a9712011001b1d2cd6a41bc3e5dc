@@ -1,0 +1,5 @@
+package com.gcp.security;
+
+public class WebSecurityConfig {
+
+}

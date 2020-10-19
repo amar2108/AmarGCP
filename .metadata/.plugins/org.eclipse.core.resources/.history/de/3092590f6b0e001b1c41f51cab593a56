@@ -1,0 +1,39 @@
+package com.gcp.service.mygcpservice;
+
+import java.util.Map;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+
+@SpringBootApplication
+@RestController
+public class MygcpserviceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MygcpserviceApplication.class, args);
+	}
+	
+	@GetMapping("/")
+	public String sayHello() {
+		return "Hello";
+	}
+	
+	@RequestMapping("/hello")
+	public ResponseEntity<String> hello(@RequestHeader Map<String, String> headers) {
+		
+		//UserService userService = UserServiceFactory.getUserService();
+		//System.out.println(userService.isUserLoggedIn());
+		return new ResponseEntity<String>(
+			      String.format("Listed %d headers", headers.size()), HttpStatus.OK);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.gcp.main;
+
+import org.springframework.boot.SpringApplication;
+
+
+public class GCPSpringBootApplication {
+	
+	public static void main(String[] args) {
+		SpringApplication.run(GCPSpringBootApplication.class, args);
+	}
+
+}

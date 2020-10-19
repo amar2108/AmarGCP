@@ -1,0 +1,29 @@
+package com.gcp.main;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gcp.model.AuthenticationRequest;
+import com.gcp.model.AuthenticationResponse;
+import com.gcp.service.GCPUserDetailsService;
+import com.gcp.util.JwtUtil;
+
+@SpringBootApplication
+public class GCPSpringBootApplication {
+	
+	public static void main(String[] args) {
+		SpringApplication.run(GCPSpringBootApplication.class, args);
+	}
+
+}
+
